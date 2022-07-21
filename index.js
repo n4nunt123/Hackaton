@@ -34,62 +34,61 @@ function colorBlindTest() {
 
   let test = [
     {
-      question: image,
+      question: '1.png',
+      answer: '1'
+    },
+    {
+      question: '2.png',
+      answer: '2'
+    },
+    {
+      question: '3.png',
+      answer: '3'
+    },
+    {
+      question: '4.png',
+      answer: '4'
+    },
+    {
+      question: '5.png',
       answer: ''
     },
     {
-      question: Image,
+      question: '6.png',
       answer: ''
     },
     {
-      question: Image,
+      question: '7.png',
       answer: ''
     },
     {
-      question: Image,
+      question: '8.png',
       answer: ''
     },
     {
-      question: Image,
+      question: '9.png',
       answer: ''
     },
     {
-      question: Image,
-      answer: ''
-    },
-    {
-      question: Image,
-      answer: ''
-    },
-    {
-      question: Image,
-      answer: ''
-    },
-    {
-      question: Image,
-      answer: ''
-    },
-    {
-      question: Image,
+      question: '10.png',
       answer: ''
     },
   ]
 
-  let colorBlindTest = '';
-  for (let i=0; i<test,length; i++) {
-    colorBlindTest = test[i]
-  }
+  random =  Math.floor(Math.random() * test.length);
 
-  let questionElement = document.getElementById('question')
-  questionElement.innerHTML = colorBlindTest.question
+  BlindTest = test[random]
+  
+  //let questionElement = document.getElementById('question')
+  //questionElement.innerHTML = colorBlindTest.question
 
-  return colorBlindTest
+  return BlindTest
 }
+
+console.log(colorBlindTest());
 
 let generatedQuestion = colorBlindTest()
 
 let counter = 0
-let answerElement = document.getElementById('answer')
-
-if ()
+//let answerElement = document.getElementById('answer')
 
