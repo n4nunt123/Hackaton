@@ -17,8 +17,8 @@
             </div>
 
             <h1>TEST BUTA WARNA</h1>
+            <form onsubmit="buttonTest()" action="#" class="form-control">
 
-            <form onsubmit="buttonTest(); return false" action="#" class="form-control">
               <div class="form-floating">
                 <input class="form-control" placeholder="Input Your Name Here" id="floatingTextarea" required></input>
                 <label for="floatingTextarea"></label>
@@ -61,7 +61,7 @@
 
         <div class="result" style="display: none;">
             <span>result</span>
-            <button>TEST LAGI</button>
+            <button id="btn-finish" onclick="testFinished()">TEST LAGI</button>
         </div>
 
         <script src="index.js"></script>
