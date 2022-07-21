@@ -16,100 +16,147 @@ let buttonTest = () => {
   inputData.nama = inputNama
   inputData.gender = inputGender
 
-  console.log(inputData)
+  // console.log(inputData)
   return inputData
 }
 
 // Color Blind Test
-function colorBlindTest() {
-  let test = [
-    {
-      question: "1.png",
-      answer: "1",
-    },
-    {
-      question: "2.png",
-      answer: "2",
-    },
-    {
-      question: "3.png",
-      answer: "3",
-    },
-    {
-      question: "4.png",
-      answer: "4",
-    },
-    {
-      question: "5.png",
-      answer: "5",
-    },
-    {
-      question: "6.png",
-      answer: "7",
-    },
-    {
-      question: "7.png",
-      answer: "7",
-    },
-    {
-      question: "8.png",
-      answer: "8",
-    },
-    {
-      question: "9.png",
-      answer: "1",
-    },
-    {
-      question: "10.png",
-      answer: "1",
-    },
-  ];
+function colorBlindTest(arr) {
+  random = Math.floor(Math.random() * arr.length);
 
-  random = Math.floor(Math.random() * test.length);
-
-  BlindTest = test[random];
+  BlindTest = arr[random];
 
   //let questionElement = document.getElementById('question')
   //questionElement.innerHTML = colorBlindTest.question
 
+  test.splice(random, 1)
+
   return BlindTest;
 }
 
-console.log(colorBlindTest());
-
 //answer button
 let count = 0
+let countTrue = 0
+let tempObj = {
+  question: "1.png",
+  answer: "1",
+}
+let test = [
+  {
+    question: "2.png",
+    answer: "2",
+  },
+  {
+    question: "3.png",
+    answer: "3",
+  },
+  {
+    question: "4.png",
+    answer: "4",
+  },
+  {
+    question: "5.png",
+    answer: "5",
+  },
+  {
+    question: "6.png",
+    answer: "7",
+  },
+  {
+    question: "7.png",
+    answer: "7",
+  },
+  {
+    question: "8.png",
+    answer: "8",
+  },
+  {
+    question: "9.png",
+    answer: "1",
+  },
+  {
+    question: "10.png",
+    answer: "1",
+  },
+];
+
+// let jawaban = "";
+// if (countTrue === 10) {
+//   jawaban = `Hi ${user}, Score ${countTrue * 10} Mata Kamu Normal!`;
+// } else {
+//   jawaban = `Hi ${user}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+// }
+
+
 let answerButton = (num) => {
   count++
+  let dataUser = buttonTest();
+  // console.log(dataUser)
+  let {nama} = dataUser;
+
+let jawaban = "";
+if (countTrue === 10) {
+jawaban = `Hi ${nama} , Score ${countTrue * 10} Mata Kamu Normal!`;
+} else {
+jawaban = `Hi ${nama} , Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+}
+
   if (count === 10) {
     let hideTest = document.getElementsByClassName("test")
     hideTest[0].style.display = 'none'
-
+    
     let showResult = document.getElementsByClassName("result")
     showResult[0].style.display = 'block'
+    let resultTest = document.getElementById("hasil")
+    resultTest.innerHTML = jawaban;
+    
+  } else {
+    
+    console.log(num,count,tempObj)
+    
+    if (Number(tempObj.answer) === num) {
+      countTrue++
+    }
+    
+    tempObj = colorBlindTest(test)
+    // console.log(tempObj)
+    
+    let gantiGambar = document.getElementById('image-test')
+    gantiGambar.src = `image/${tempObj.question}`
+    
+    
+    console.log(countTrue)
   }
-  console.log(num,count)
-  return num
+  
+  // return countTrue
 }
+
+// console.log(answerButton())
 
 
 //ardi
-// let inputResult = {
-//   user: inputData.nama,
-// };
+// let totalTrue = countTrue;
+// let jawaban = "";
 
-let obj = {
-  user: "person",
-};
+// if (totalTrue === 10) {
+//   jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
+// } else {
+//   jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
+// }
 
-let { user } = obj;
-console.log(user);
+// if(count === 10) {
+//   document.getElementById("hasil").innerHTML = jawaban;
+// } else if (count < 10) {
+//   document.getElementById("hasil").innerHTML = "gak masuk";
+// } else {
+//   document.getElementById("hasil").innerHTML = "gak masuk 1";
+// }
+  
+function testAgain() {
+    let back = document.getElementsByClassName("container");
+    back[0].style.display = "block";
 
-let totalTrue = 10;
-let totalFalse = 0;
-let jawaban = "";
-
-if (totalTrue === 10) {
-  jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
-} else {
-  jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
+    let backResult = document.getElementsByClassName("result");
+    backResult[0].style.display = "none";
+    
+}
