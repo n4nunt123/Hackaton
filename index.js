@@ -1,9 +1,9 @@
 let buttonTest = () => {
-  let testButton = document.getElementsByClassName('container')
-  testButton[0].style.display = 'none'
+  let testButton = document.getElementsByClassName("container");
+  testButton[0].style.display = "none";
 
-  let testButton2 = document.getElementsByClassName("test")
-  testButton2[0].style.display = 'block'
+  let testButton2 = document.getElementsByClassName("test");
+  testButton2[0].style.display = "block";
 
   let inputData = {
     nama: '',
@@ -21,65 +21,65 @@ let buttonTest = () => {
 }
 
 // Color Blind Test
-function colorBlindTest() {
+function colorBlindTest(arr) {
+  random = Math.floor(Math.random() * arr.length);
 
-  let test = [
-    {
-      question: '1.png',
-      answer: '1'
-    },
-    {
-      question: '2.png',
-      answer: '2'
-    },
-    {
-      question: '3.png',
-      answer: '3'
-    },
-    {
-      question: '4.png',
-      answer: '4'
-    },
-    {
-      question: '5.png',
-      answer: '5'
-    },
-    {
-      question: '6.png',
-      answer: '7'
-    },
-    {
-      question: '7.png',
-      answer: '7'
-    },
-    {
-      question: '8.png',
-      answer: '8'
-    },
-    {
-      question: '9.png',
-      answer: '1'
-    },
-    {
-      question: '10.png',
-      answer: '1'
-    },
-  ]
+  BlindTest = arr[random];
 
-  random =  Math.floor(Math.random() * test.length);
-
-  BlindTest = test[random]
-  
   //let questionElement = document.getElementById('question')
   //questionElement.innerHTML = colorBlindTest.question
 
-  return BlindTest
-}
+  test.splice(random, 1)
 
-console.log(colorBlindTest());
+  return BlindTest;
+}
 
 //answer button
 let count = 0
+let countTrue = 0
+let tempObj = {
+  question: "1.png",
+  answer: "1",
+}
+let test = [
+  {
+    question: "2.png",
+    answer: "2",
+  },
+  {
+    question: "3.png",
+    answer: "3",
+  },
+  {
+    question: "4.png",
+    answer: "4",
+  },
+  {
+    question: "5.png",
+    answer: "5",
+  },
+  {
+    question: "6.png",
+    answer: "7",
+  },
+  {
+    question: "7.png",
+    answer: "7",
+  },
+  {
+    question: "8.png",
+    answer: "8",
+  },
+  {
+    question: "9.png",
+    answer: "1",
+  },
+  {
+    question: "10.png",
+    answer: "1",
+  },
+];
+
 let answerButton = (num) => {
   count++
   if (count === 10) {
@@ -89,10 +89,45 @@ let answerButton = (num) => {
     let showResult = document.getElementsByClassName("result")
     showResult[0].style.display = 'block'
   }
-  console.log(num,count)
-  return num
+  console.log(num,count,tempObj)
+
+  if (Number(tempObj.answer) === num) {
+    countTrue++
+  }
+
+  tempObj = colorBlindTest(test)
+  // console.log(tempObj)
+  
+  let gantiGambar = document.getElementById('image-test')
+  gantiGambar.src = `image/${tempObj.question}`
+
+  
+  console.log(countTrue)
+
+  // return countTrue
 }
 
-let scoreTest = () => {
+// console.log(answerButton())
 
+
+//ardi
+// let inputResult = {
+//   user: inputData.nama,
+// };
+
+// let obj = {
+//   user: "person",
+// };
+
+// let { user } = obj;
+// console.log(user);
+
+let totalTrue = 10;
+let totalFalse = 0;
+let jawaban = "";
+
+if (totalTrue === 10) {
+  jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
+} else {
+  jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
 }
