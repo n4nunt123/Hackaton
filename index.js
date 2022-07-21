@@ -28,3 +28,68 @@ let buttonTest = () => {
 
 // inputData.nama = inputNama
 // inputData.gender = inputGender
+
+// Color Blind Test
+function colorBlindTest() {
+
+  let test = [
+    {
+      question: image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+    {
+      question: Image,
+      answer: ''
+    },
+  ]
+
+  let colorBlindTest = '';
+  for (let i=0; i<test,length; i++) {
+    colorBlindTest = test[i]
+  }
+
+  let questionElement = document.getElementById('question')
+  questionElement.innerHTML = colorBlindTest.question
+
+  return colorBlindTest
+}
+
+let generatedQuestion = colorBlindTest()
+
+let counter = 0
+let answerElement = document.getElementById('answer')
+
+if ()
+
