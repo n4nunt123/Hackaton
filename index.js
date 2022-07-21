@@ -17,10 +17,19 @@ let buttonTest = () => {
   inputData.gender = inputGender
 
   console.log(inputData)
+  return inputData
 }
 
+let count = 0
 let answerButton = (num) => {
-  // let theAnswer = document.getElementsByClassName("btn-1")
-  console.log(num)
+  count++
+  if (count === 10) {
+    let hideTest = document.getElementsByClassName("test")
+    hideTest[0].style.display = 'none'
+
+    let showResult = document.getElementsByClassName("result")
+    showResult[0].style.display = 'block'
+  }
+  console.log(num,count)
   return num
 }

@@ -14,7 +14,7 @@
     <body>
         <div class="container" style="display: block;">
             <h1>TEST BUTA WARNA</h1>
-            <form onsubmit="buttonTest(); return false" action="#" class="form-control">
+            <form onsubmit="buttonTest()" action="#" class="form-control">
 
               <div class="form-floating">
                 <textarea class="form-control" placeholder="Input Your Name Here" id="floatingTextarea"></textarea>
@@ -31,7 +31,16 @@
         </div>
 
         <div class="test" style="display: none;">
-            <img id="image-test" src="">
+            <!-- <img id="image-test-1" src="image/1-1.png">
+            <img id="image-test-2" src="image/1-2.png">
+            <img id="image-test-3" src="image/1.png">
+            <img id="image-test-4" src="image/2.png">
+            <img id="image-test-5" src="image/3.png">
+            <img id="image-test-6" src="image/4.png">
+            <img id="image-test-7" src="image/5.png">
+            <img id="image-test-8" src="image/7-1.png">
+            <img id="image-test-9" src="image/7.png">
+            <img id="image-test-10" src="image/8.png"> -->
             <div>
                 <button class ="btn-1" onclick="answerButton(1)">1</button>
                 <button class ="btn-1" onclick="answerButton(2)">2</button>
@@ -51,7 +60,7 @@
 
         <div class="result" style="display: none;">
             <span>result</span>
-            <button>TEST LAGI</button>
+            <button id="btn-finish" onclick="testFinished()">TEST LAGI</button>
         </div>
 
         <script src="index.js"></script>
