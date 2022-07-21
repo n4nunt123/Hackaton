@@ -16,9 +16,20 @@ body {
 
 .container {
     background-color: white;
-    padding: 120px;
+    padding: 80px;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    width: 30%;
+    height: 30%;
 }
 
 .container h1 {
