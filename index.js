@@ -6,18 +6,19 @@ let buttonTest = () => {
   testButton2[0].style.display = "block";
 
   let inputData = {
-    nama: "",
-    gender: "",
-  };
+    nama: '',
+    gender: ''
+  }
+  
+  let inputNama = document.getElementById("floatingTextarea").value
+  let inputGender = document.getElementById("gender-user").value
+  
+  inputData.nama = inputNama
+  inputData.gender = inputGender
 
-  let inputNama = document.getElementById("floatingTextarea").value;
-  let inputGender = document.getElementById("gender-user").value;
-
-  inputData.nama = inputNama;
-  inputData.gender = inputGender;
-
-  console.log(inputData);
-};
+  console.log(inputData)
+  return inputData
+}
 
 // Color Blind Test
 function colorBlindTest() {
@@ -76,13 +77,23 @@ function colorBlindTest() {
 
 console.log(colorBlindTest());
 
-//
+//answer button
+let count = 0
 let answerButton = (num) => {
-  // let theAnswer = document.getElementsByClassName("btn-1")
-  console.log(num);
-  return num;
-};
+  count++
+  if (count === 10) {
+    let hideTest = document.getElementsByClassName("test")
+    hideTest[0].style.display = 'none'
 
+    let showResult = document.getElementsByClassName("result")
+    showResult[0].style.display = 'block'
+  }
+  console.log(num,count)
+  return num
+}
+
+
+//ardi
 // let inputResult = {
 //   user: inputData.nama,
 // };
@@ -102,4 +113,3 @@ if (totalTrue === 10) {
   jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
 } else {
   jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
-}
