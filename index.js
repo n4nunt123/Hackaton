@@ -1,8 +1,9 @@
 let buttonTest = () => {
-  // event.preventDefault()
-  let testButton = document.getElementsByClassName('create')
-  // testButton[0].style.display = 'none'
-  console.log(testButton)
+  let testButton = document.getElementsByClassName('container')
+  testButton[0].style.display = 'none'
+
+  let testButton2 = document.getElementsByClassName("test")
+  testButton2[0].style.display = 'block'
 
   let inputData = {
     nama: '',
@@ -17,17 +18,6 @@ let buttonTest = () => {
 
   console.log(inputData)
 }
-
-// let inputData = {
-//   nama: '',
-//   gender: ''
-// }
-
-// let inputNama = document.getElementById("nama-user").value
-// let inputGender = document.getElementById("gender-user").value
-
-// inputData.nama = inputNama
-// inputData.gender = inputGender
 
 // Color Blind Test
 function colorBlindTest() {
@@ -87,8 +77,9 @@ function colorBlindTest() {
 
 console.log(colorBlindTest());
 
-let generatedQuestion = colorBlindTest()
-
-let counter = 0
-//let answerElement = document.getElementById('answer')
-
+//
+let answerButton = (num) => {
+  // let theAnswer = document.getElementsByClassName("btn-1")
+  console.log(num)
+  return num
+}
