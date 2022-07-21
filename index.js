@@ -42,27 +42,27 @@ function colorBlindTest() {
     },
     {
       question: '5.png',
-      answer: ''
+      answer: '5'
     },
     {
       question: '6.png',
-      answer: ''
+      answer: '7'
     },
     {
       question: '7.png',
-      answer: ''
+      answer: '7'
     },
     {
       question: '8.png',
-      answer: ''
+      answer: '8'
     },
     {
       question: '9.png',
-      answer: ''
+      answer: '1'
     },
     {
       question: '10.png',
-      answer: ''
+      answer: '1'
     },
   ]
 
@@ -91,4 +91,8 @@ let answerButton = (num) => {
   }
   console.log(num,count)
   return num
+}
+
+let scoreTest = () => {
+
 }
