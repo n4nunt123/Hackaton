@@ -113,3 +113,4 @@ if (totalTrue === 10) {
   jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
 } else {
   jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
+}
