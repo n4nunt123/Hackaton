@@ -16,7 +16,8 @@ let buttonTest = () => {
   inputData.nama = inputNama
   inputData.gender = inputGender
 
-  // console.log(inputData)
+  console.log(inputData)
+
   return inputData
 }
 
@@ -92,13 +93,13 @@ let answerButton = (num) => {
       if (gender === 'Male') {
         jawaban = `Hi Mr. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
       } else {
-        jawaban = `Hi Mrs. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+        jawaban = `Hi Ms. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
       }
     } else {
       if (gender === 'Male') {
         jawaban = `Hi Mr. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
       } else {
-        jawaban = `Hi Mrs. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+        jawaban = `Hi Ms. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
       }
     }
     
