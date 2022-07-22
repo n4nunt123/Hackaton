@@ -118,15 +118,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* 
-@keyframes example {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;}
-  } */
-
 .btn-1 {
     font-size: 2em;
     padding: 35px;
@@ -148,15 +139,13 @@ body {
 }
 
 .test h1 {
-    /* position: absolute;
-    top: 120px;
-    left: 400px; */
     text-transform: uppercase;
     color: #42a7f98f;
-    font-weight: 400;
+    font-weight: bolder;
     font-size: 3em;
     padding-bottom: 70px;
-    margin-left: 160px;
+    margin-left: 260px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .result {
@@ -165,15 +154,15 @@ body {
     text-align: center;
 }
 
-.img-test {
-    opacity: 50%;
-}
-
 #hasil {
     display: block;
-    font-size: 3em;
-    color: white;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    font-size: 2.5em;
+    color: #42a7f98f;
+    padding: 120px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    transition: 0.5s;
 }
 
 #btn-finish {
@@ -186,8 +175,8 @@ body {
     border-radius: 10px;
     background-color: #42a7f98f;
     color: white;
-    font-size: 3em;
-    margin-top: 0.6em;
+    font-size: 2em;
+    margin-top: 1em;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: 0.5s;
@@ -196,4 +185,9 @@ body {
 #btn-finish:hover {
     background-color: #f974a0a2;
     padding: 23px;
+    border-radius: 100px;
+}
+
+#gif-mata {
+    margin-bottom: 7vh;
 }
