@@ -92,15 +92,21 @@ let answerButton = (num) => {
     let jawaban = "";
     if (countTrue === 10) {
       if (gender === 'Male') {
-        jawaban = `Hi Mr. ${nama}, You Got ${countTrue * 10}/100 Congratulation You Have Normal Vision!`;
+        document.getElementById('gif-mata').src='eyeGif1.gif'
+        jawaban = `Hi Mr. ${nama}, You Got <span style="color: #43f57ee5;">${countTrue * 10}/100</span> Congratulation You Have Normal Vision!`;
       } else {
-        jawaban = `Hi Ms. ${nama}, You Got ${countTrue * 10}/100 Congratulation You Have Normal Vision!!`;
+        document.getElementById('gif-mata').src='eyeGif1.gif'
+        jawaban = `Hi Ms. ${nama}, You Got <span style="color: #43f57ee5;">${countTrue * 10}/100</span> Congratulation You Have Normal Vision!!`;
       }
     } else {
       if (gender === 'Male') {
-        jawaban = `Hi Mr. ${nama}, You Got ${countTrue * 10}/100 Too Bad Better Luck Next Time`;
+        document.getElementById('gif-mata').src='eyeGif.gif'
+        document.getElementById('gif-mata').style.width='50%'
+        jawaban= `Hi Mr. ${nama}, You Got <span style="color: #f974a0e5;">${countTrue * 10}/100</span> Too Bad Better Luck Next Time`;
       } else {
-        jawaban = `Hi Ms. ${nama}, You Got ${countTrue * 10}/100 Too Bad Better Luck Next Time`;
+        document.getElementById('gif-mata').src='eyeGif.gif'
+        document.getElementById('gif-mata').style.width='50%'
+        jawaban = `Hi Ms. ${nama}, You Got <span style="color: #f974a0e5;">${countTrue * 10}/100</span> Too Bad Better Luck Next Time`;
       }
     }
     
