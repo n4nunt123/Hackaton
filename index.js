@@ -16,7 +16,7 @@ let buttonTest = () => {
   inputData.nama = inputNama
   inputData.gender = inputGender
 
-  console.log(inputData)
+  // console.log(inputData)
   return inputData
 }
 
@@ -25,10 +25,6 @@ function colorBlindTest(arr) {
   random = Math.floor(Math.random() * arr.length);
 
   BlindTest = arr[random];
-
-  //let questionElement = document.getElementById('question')
-  //questionElement.innerHTML = colorBlindTest.question
-
   test.splice(random, 1)
 
   return BlindTest;
@@ -82,52 +78,62 @@ let test = [
 
 let answerButton = (num) => {
   count++
+  let dataUser = buttonTest();
+  // console.log(dataUser)
+  let {nama, gender} = dataUser;
+  
+  
   if (count === 10) {
+    if (Number(tempObj.answer) === num) {
+      countTrue++
+    }
+    let jawaban = "";
+    if (countTrue === 10) {
+      if (gender === 'Male') {
+        jawaban = `Hi Mr. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+      } else {
+        jawaban = `Hi Mrs. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+      }
+    } else {
+      if (gender === 'Male') {
+        jawaban = `Hi Mr. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+      } else {
+        jawaban = `Hi Mrs. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+      }
+    }
+    
     let hideTest = document.getElementsByClassName("test")
     hideTest[0].style.display = 'none'
-
+    
     let showResult = document.getElementsByClassName("result")
     showResult[0].style.display = 'block'
+    let resultTest = document.getElementById("hasil")
+    resultTest.innerHTML = jawaban;
+    
+  } else {
+    if (Number(tempObj.answer) === num) {
+      countTrue++
+    }
+    
+    tempObj = colorBlindTest(test)
+    // console.log(tempObj)
+    
+    let gantiGambar = document.getElementById('image-test')
+    gantiGambar.src = `image/${tempObj.question}`
+    
+    
+    console.log(num,count,tempObj)
+    console.log(countTrue)
   }
-  console.log(num,count,tempObj)
-
-  if (Number(tempObj.answer) === num) {
-    countTrue++
-  }
-
-  tempObj = colorBlindTest(test)
-  // console.log(tempObj)
   
-  let gantiGambar = document.getElementById('image-test')
-  gantiGambar.src = `image/${tempObj.question}`
-
-  
-  console.log(countTrue)
-
   // return countTrue
 }
 
-// console.log(answerButton())
+function testAgain() {
+    let back = document.getElementsByClassName("container");
+    back[0].style.display = "block";
 
-
-//ardi
-// let inputResult = {
-//   user: inputData.nama,
-// };
-
-// let obj = {
-//   user: "person",
-// };
-
-// let { user } = obj;
-// console.log(user);
-
-let totalTrue = 10;
-let totalFalse = 0;
-let jawaban = "";
-
-if (totalTrue === 10) {
-  jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
-} else {
-  jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
+    let backResult = document.getElementsByClassName("result");
+    backResult[0].style.display = "none";
+    
 }
