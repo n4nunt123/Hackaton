@@ -137,6 +137,5 @@ function testAgain() {
     back[0].style.display = "block";
 
     let backResult = document.getElementsByClassName("result");
-    backResult[0].style.display = "none";
-    
+    backResult[0].style.display = "none";  
 }
