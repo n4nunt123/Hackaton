@@ -154,18 +154,15 @@ body {
     text-align: center;
 }
 
-.img-test {
-    opacity: 50%;
-}
-
 #hasil {
     display: block;
     font-size: 2.5em;
     color: #42a7f98f;
-    padding: 170px;
+    padding: 120px;
     border-radius: 10px;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     background-color: white;
+    transition: 0.5s;
 }
 
 #btn-finish {
@@ -179,7 +176,7 @@ body {
     background-color: #42a7f98f;
     color: white;
     font-size: 2em;
-    margin-top: 0.6em;
+    margin-top: 1em;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: 0.5s;
@@ -188,8 +185,9 @@ body {
 #btn-finish:hover {
     background-color: #f974a0a2;
     padding: 23px;
+    border-radius: 100px;
 }
 
-.coba {
-    background-color: #43f57ee5;
+#gif-mata {
+    margin-bottom: 7vh;
 }
