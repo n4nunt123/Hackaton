@@ -92,15 +92,15 @@ let answerButton = (num) => {
     let jawaban = "";
     if (countTrue === 10) {
       if (gender === 'Male') {
-        jawaban = `Hi Mr. ${nama}, You Got ${countTrue * 10}/100 Congratulation You Have Normal Vision!`;
+        jawaban = `Hi Mr. ${nama}, You Got <span style="color: green;">${countTrue * 10}/100</span> Congratulation You Have Normal Vision!`;
       } else {
-        jawaban = `Hi Ms. ${nama}, You Got ${countTrue * 10}/100 Congratulation You Have Normal Vision!!`;
+        jawaban = `Hi Ms. ${nama}, You Got <span style="color: green;">${countTrue * 10}/100</span> Congratulation You Have Normal Vision!!`;
       }
     } else {
       if (gender === 'Male') {
-        jawaban = `Hi Mr. ${nama}, You Got ${countTrue * 10}/100 Too Bad Better Luck Next Time`;
+        jawaban = `Hi Mr. ${nama}, You Got <span style="color: red;">${countTrue * 10}/100</span> Too Bad Better Luck Next Time`;
       } else {
-        jawaban = `Hi Ms. ${nama}, You Got ${countTrue * 10}/100 Too Bad Better Luck Next Time`;
+        jawaban = `Hi Ms. ${nama}, You Got <span style="color: red;">${countTrue * 10}/100</span> Too Bad Better Luck Next Time`;
       }
     }
     
