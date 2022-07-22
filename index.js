@@ -88,6 +88,9 @@ let answerButton = (num) => {
 
     let showResult = document.getElementsByClassName("result")
     showResult[0].style.display = 'block'
+
+    let resultTest = document.getElementById("hasil")
+    resultTest.innerHTML = jawaban
   }
   console.log(num,count,tempObj)
 
@@ -122,12 +125,12 @@ let answerButton = (num) => {
 // let { user } = obj;
 // console.log(user);
 
-let totalTrue = 10;
-let totalFalse = 0;
-let jawaban = "";
+// let totalTrue = 10;
+// let totalFalse = 0;
+// let jawaban = "";
 
-if (totalTrue === 10) {
-  jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
-} else {
-  jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
-}
+// if (totalTrue === 10) {
+//   jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
+// } else {
+//   jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
+// }
