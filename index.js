@@ -25,10 +25,6 @@ function colorBlindTest(arr) {
   random = Math.floor(Math.random() * arr.length);
 
   BlindTest = arr[random];
-
-  //let questionElement = document.getElementById('question')
-  //questionElement.innerHTML = colorBlindTest.question
-
   test.splice(random, 1)
 
   return BlindTest;
@@ -80,28 +76,32 @@ let test = [
   },
 ];
 
-// let jawaban = "";
-// if (countTrue === 10) {
-//   jawaban = `Hi ${user}, Score ${countTrue * 10} Mata Kamu Normal!`;
-// } else {
-//   jawaban = `Hi ${user}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
-// }
-
-
 let answerButton = (num) => {
   count++
   let dataUser = buttonTest();
   // console.log(dataUser)
-  let {nama} = dataUser;
-
-let jawaban = "";
-if (countTrue === 10) {
-jawaban = `Hi ${nama} , Score ${countTrue * 10} Mata Kamu Normal!`;
-} else {
-jawaban = `Hi ${nama} , Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
-}
-
+  let {nama, gender} = dataUser;
+  
+  
   if (count === 10) {
+    if (Number(tempObj.answer) === num) {
+      countTrue++
+    }
+    let jawaban = "";
+    if (countTrue === 10) {
+      if (gender === 'Male') {
+        jawaban = `Hi Mr. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+      } else {
+        jawaban = `Hi Mrs. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+      }
+    } else {
+      if (gender === 'Male') {
+        jawaban = `Hi Mr. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+      } else {
+        jawaban = `Hi Mrs. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+      }
+    }
+    
     let hideTest = document.getElementsByClassName("test")
     hideTest[0].style.display = 'none'
     
@@ -111,9 +111,6 @@ jawaban = `Hi ${nama} , Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
     resultTest.innerHTML = jawaban;
     
   } else {
-    
-    console.log(num,count,tempObj)
-    
     if (Number(tempObj.answer) === num) {
       countTrue++
     }
@@ -125,33 +122,13 @@ jawaban = `Hi ${nama} , Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
     gantiGambar.src = `image/${tempObj.question}`
     
     
+    console.log(num,count,tempObj)
     console.log(countTrue)
   }
   
   // return countTrue
 }
 
-// console.log(answerButton())
-
-
-//ardi
-// let totalTrue = countTrue;
-// let jawaban = "";
-
-// if (totalTrue === 10) {
-//   jawaban = `Hi ${user}, Score ${totalTrue * 10} Mata Kamu Normal!`;
-// } else {
-//   jawaban = `Hi ${user}, Score${totalTrue * 10} Kamu Terindikasi Buta Warna`;
-// }
-
-// if(count === 10) {
-//   document.getElementById("hasil").innerHTML = jawaban;
-// } else if (count < 10) {
-//   document.getElementById("hasil").innerHTML = "gak masuk";
-// } else {
-//   document.getElementById("hasil").innerHTML = "gak masuk 1";
-// }
-  
 function testAgain() {
     let back = document.getElementsByClassName("container");
     back[0].style.display = "block";
