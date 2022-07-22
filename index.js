@@ -16,7 +16,7 @@ let buttonTest = () => {
   inputData.nama = inputNama
   inputData.gender = inputGender
 
-  console.log(inputData)
+  // console.log(inputData)
 
   return inputData
 }
@@ -26,6 +26,7 @@ function colorBlindTest(arr) {
   random = Math.floor(Math.random() * arr.length);
 
   BlindTest = arr[random];
+
   test.splice(random, 1)
 
   return BlindTest;
@@ -79,11 +80,11 @@ let test = [
 
 let answerButton = (num) => {
   count++
+
   let dataUser = buttonTest();
   // console.log(dataUser)
   let {nama, gender} = dataUser;
-  
-  
+
   if (count === 10) {
     if (Number(tempObj.answer) === num) {
       countTrue++
@@ -91,15 +92,15 @@ let answerButton = (num) => {
     let jawaban = "";
     if (countTrue === 10) {
       if (gender === 'Male') {
-        jawaban = `Hi Mr. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+        jawaban = `Hi Mr. ${nama}, You Got ${countTrue * 10}/100 Congratulation You Have Normal Vision!`;
       } else {
-        jawaban = `Hi Ms. ${nama}, Score ${countTrue * 10} Mata Kamu Normal!`;
+        jawaban = `Hi Ms. ${nama}, You Got ${countTrue * 10}/100 Congratulation You Have Normal Vision!!`;
       }
     } else {
       if (gender === 'Male') {
-        jawaban = `Hi Mr. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+        jawaban = `Hi Mr. ${nama}, You Got ${countTrue * 10}/100 Too Bad Better Luck Next Time`;
       } else {
-        jawaban = `Hi Ms. ${nama}, Score${countTrue * 10} Kamu Terindikasi Buta Warna`;
+        jawaban = `Hi Ms. ${nama}, You Got ${countTrue * 10}/100 Too Bad Better Luck Next Time`;
       }
     }
     
@@ -108,6 +109,7 @@ let answerButton = (num) => {
     
     let showResult = document.getElementsByClassName("result")
     showResult[0].style.display = 'block'
+
     let resultTest = document.getElementById("hasil")
     resultTest.innerHTML = jawaban;
     
@@ -124,7 +126,7 @@ let answerButton = (num) => {
     
     
     console.log(num,count,tempObj)
-    console.log(countTrue)
+    console.log(countTrue, 'jumlah benar')
   }
   
   // return countTrue
